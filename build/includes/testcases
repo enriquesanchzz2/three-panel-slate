@@ -1,0 +1,728 @@
+<h1 id='test-cases'>Test Cases</h1>
+<p>The Test Cases resource enables you to interact with the Test Cases of a Project profile in Jeeves.
+The following table describes the available endpoints of the Test Cases resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#get-projects-project-testcases" class="get-endpoint-word">GET</a> /projects/{project}/testcases</td>
+<td>Retrieves the Test Cases of a Project profile.</td>
+</tr>
+<tr>
+<td><a href="#post-projects-project-testcases" class="post-endpoint-word">POST</a> /projects/{project}/testcases</td>
+<td>Creates a new Test Case.</td>
+</tr>
+<tr>
+<td><a href="#delete-projects-project-testcases" class="delete-endpoint-word">DELETE</a> /projects/{project}/testcases</td>
+<td>Deletes all Test Cases of a Project profile.</td>
+</tr>
+<tr>
+<td><a href="#get-projects-project-testcases-testcase" class="get-endpoint-word">GET</a> /projects/{project}/testcases/{testcase}</td>
+<td>Retrieves a Test Case data object.</td>
+</tr>
+<tr>
+<td><a href="#post-projects-project-testcases-testcase" class="post-endpoint-word">POST</a> /projects/{project}/testcases/{testcase}</td>
+<td>Duplicates a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#put-projects-project-testcases-testcase" class="put-endpoint-word">PUT</a> /projects/{project}/testcases/{testcase}</td>
+<td>Updates a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#delete-projects-project-testcases-testcase" class="delete-endpoint-word">DELETE</a> /projects/{project}/testcases/{testcase}</td>
+<td>Deletes a Test Case.</td>
+</tr>
+</tbody></table>
+<h2 id='get-projects-project-testcases'>GET/ PROJECTS/{PROJECT}/TESTCASES</h2>
+<p class="get-endpoint">GET</p>
+<h3 id='summary'>Summary</h3>
+<p>The <strong>GET/ PROJECTS/{PROJECT}/TESTCASES</strong> endpoint retrieves the Test Cases of a Project profile.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases?{from}&amp;{size}'</span>
+
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project to retreive Test Cases from.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Query</td>
+<td>The Test Case identification number.</td>
+<td>No</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Query</td>
+<td>The number of Projects to retrieve.</td>
+<td>No</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1&#39;</code></p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1</code></p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 21 Jun 2021 15:22:48 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon, 21 Jun 2021 15:22:48 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:46:44 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:46:44 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='post-projects-project-testcases'>POST /PROJECTS/{PROJECT}/TESTCASES</h2>
+<p class="post-endpoint">POST</p> 
+<h3 id='summary-2'>Summary</h3>
+<p>The <strong>POST /PROJECTS/{PROJECT}/TESTCASE</strong> endpoint Creates a new Test Case. </p>
+<h3 id='parameters-2'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases''
+</span></code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project to create the Test Case</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Body</td>
+<td>The JSON file with the data object to create the Test Case</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<p></br></p>
+
+<blockquote>
+<p>Body Parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-a-url"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tests an URL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetASingleUrl"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>String</td>
+<td>The name of the Test Case</td>
+</tr>
+<tr>
+<td>description</td>
+<td>No</td>
+<td>String</td>
+<td>The description of the Test Case</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>Yes</td>
+<td>String</td>
+<td>The Preset for the Test Case</td>
+</tr>
+</tbody></table>
+<h3 id='responses-2'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-2'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-2'>cURL Request</h4>
+<p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;name&quot;: &quot;get-a-url&quot;, \ 
+   &quot;description&quot;: &quot;Tests an URL&quot;, \ 
+   &quot;binary&quot;: &quot;GetASingleUrl&quot; \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases&#39;</code></p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases</code> </p>
+<h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-2'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:52:50 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:52:50 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='delete-projects-project-testcases'>DELETE /PROJECTS/{PROJECT}/TESTCASES</h2>
+<p class="delete-endpoint">DELETE</p> 
+<h3 id='summary-3'>Summary</h3>
+<p>The <strong>DELETE /PROJECTS/{PROJECT}/TESTCASES</strong> endpoint deletes all Test Cases of a Project profile.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases'</span>
+<span class="s1">'
+</span></code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project to delete all Test Cases.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-3'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-3'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-3'>cURL Request</h4>
+<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/jeeves-api/testcases&#39;</code></p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/jeeves-api/testcases</code> </p>
+<h3 id='sample-response-body-3'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:57:41 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 19:57:41 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-projects-project-testcases-testcase'>GET /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</h2>
+<p class="get-endpoint">GET</p>
+<h3 id='summary-4'>Summary</h3>
+<p>The <strong>GET /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint retrieves a Test Case data object.</p>
+<h3 id='parameters-4'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases/{testcase}'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project with the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>Path</td>
+<td>The name of the Test Case to retrieve.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-4'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-4'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-4'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code></p>
+<h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"testcase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-an-url"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seed-project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetASingleUrl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-an-url"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastActivity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624392124576</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624392124576</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isRunning"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isPending"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latestStatistic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"responseTimeLowerBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"responseTimeHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"responseTimeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-4'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 20:02:19 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 20:02:19 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='post-projects-project-testcases-testcase'>POST /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</h2>
+<p class="post-endpoint">POST</p> 
+<h3 id='summary-5'>Summary</h3>
+<p>The <strong>POST /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint Duplicates a Test Case.</p>
+<h3 id='parameters-5'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases/{testcase}'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project with the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>Path</td>
+<td>The name of the Test Case to duplicate.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Body</td>
+<td>The JSON file with the data object for the Test Case.</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<p></br></p>
+
+<blockquote>
+<p>Body Parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"copy-of-get-a-url"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A copy of the get an url Test Case"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>String</td>
+<td>The name of the Test Case duplicate</td>
+</tr>
+<tr>
+<td>description</td>
+<td>No</td>
+<td>String</td>
+<td>The description of the Test Case duplicate</td>
+</tr>
+</tbody></table>
+<h3 id='responses-5'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-5'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-5'>cURL Request</h4>
+<p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;name&quot;: &quot;copy-of-get-an-url&quot;, \ 
+   &quot;description&quot;: &quot;A copy of the get an url Test Case&quot; \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code> </p>
+<h3 id='sample-response-body-5'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-5'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 20:09:37 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 20:09:37 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='put-projects-project-testcases-testcase'>PUT /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</h2>
+<p class="put-endpoint">PUT</p> 
+<h3 id='summary-6'>Summary</h3>
+<p>The <strong>PUT /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint updates a Test Case. </p>
+<h3 id='parameters-6'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/{project}/testcases/{testcase}'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project with the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>Path</td>
+<td>The name of the Test Case to update.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Body</td>
+<td>The JSON file with the data object of the Test Case.</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<p></br></p>
+
+<blockquote>
+<p>Body Parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-an-url-2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A copy of the Get an URL Test Case"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>String</td>
+<td>The new name of the Test Case</td>
+</tr>
+<tr>
+<td>description</td>
+<td>No</td>
+<td>String</td>
+<td>The new description of the Test Case</td>
+</tr>
+</tbody></table>
+<h3 id='responses-6'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-6'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-6'>cURL Request</h4>
+<p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;name&quot;: &quot;get-an-url-2&quot;, \ 
+   &quot;description&quot;: &quot;A copy of the Get an URL Test Case&quot; \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url&#39;</code></p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url</code> </p>
+<h3 id='sample-response-body-6'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-6'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 21:26:46 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 21:26:46 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='delete-projects-project-testcases-testcase'>DELETE /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</h2>
+<p class="delete-endpoint">DELETE</p> 
+
+<p><strong>Summary:</strong>
+The <strong>DELETE /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint deletes a Test Case.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/projects/{project}/testcases/{testcase}'</span>
+
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Path</td>
+<td>The name of the Project with the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>Path</td>
+<td>The name of the Test Case to delete.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-7'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-7'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:  </p>
+<h4 id='curl-request-7'>cURL Request</h4>
+<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2&#39;</code></p>
+<h4 id='http-request-7'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2</code> </p>
+<h3 id='sample-response-body-7'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-7'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 21:32:08 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tue, 22 Jun 2021 21:32:08 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

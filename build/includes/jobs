@@ -1,0 +1,387 @@
+<h1 id='jobs'>Jobs</h1>
+<p>The Jobs resource enables you to interact with the Jobs tasks of a Project profile. The following table describes the available endpoints of the Jobs resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#post-jobs-start" class="post-endpoint-word">POST</a> /jobs/start</td>
+<td>Starts a Project profile Job Run task.</td>
+</tr>
+<tr>
+<td><a href="#get-jobs-trackingnumber-status" class="get-endpoint-word">GET</a> /jobs/{trackingNumber}/status</td>
+<td>Retrieves the status of a Project profile Job.</td>
+</tr>
+<tr>
+<td><a href="#get-jobs-trackingnumber-abort" class="get-endpoint-word">GET</a> /jobs/trackingNumber}/abort</td>
+<td>Stops a Project profile Job Run task.</td>
+</tr>
+<tr>
+<td><a href="#get-projects-project-jobs" class="get-endpoint-word">GET</a> /projects/{project}/jobs</td>
+<td>Retrieves the Jobs history of a Project profile.</td>
+</tr>
+</tbody></table>
+<h2 id='post-jobs-start'>POST /JOBS/START</h2>
+<p class="post-endpoint">POST</p> 
+<h3 id='summary'>Summary</h3>
+<p>The <strong>POST /JOBS/START</strong> endpoint starts a Project profile Job Run task.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'{API Enviroment URL}/jobs/start'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>The Json file with the data object to create the Job</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seed-project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"executionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new-seed-job"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requireApprovingChecks"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></br></p>
+
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+<th>Expected Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>yes</td>
+<td>String</td>
+<td>The name of the Project to create a Job.</td>
+<td></td>
+</tr>
+<tr>
+<td>executionNotes</td>
+<td>yes</td>
+<td>String</td>
+<td>The name of the new Job.</td>
+<td></td>
+</tr>
+<tr>
+<td>requireApprovingChecks</td>
+<td>yes</td>
+<td>Integer</td>
+<td>The percentage of successful tasks at what a job is considered successful.</td>
+<td>A number equal or less than a 100 </br> A number equal or greater than 0</td>
+</tr>
+</tbody></table>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint: </p>
+<h4 id='curl-request'>cURL Request</h4>
+<p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;project&quot;: &quot;seed-project&quot;, \ 
+   &quot;executionNotes&quot;: &quot;new-seed-job&quot;, \ 
+   &quot;requireApprovingChecks&quot;: 2 \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start&#39;</code></p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start</code> </p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb"</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:38:36 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:38:36 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-jobs-trackingnumber-status'>GET /JOBS/{TRACKINGNUMBER}/STATUS</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-2'>Summary</h3>
+<p>The <strong>GET /JOBS/{TRACKINGNUMBER}/STATUS</strong> endpoint retrieves the status of a Project profile Job.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/jobs/{trackingNumber}/status'</span>
+
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trackingNumber</td>
+<td>path</td>
+<td>The Tracking Number ID of the Project Job</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-2'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-2'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint: </p>
+<h4 id='curl-request-2'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status&#39;</code></p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status</code> </p>
+<h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"executionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new-seed-job"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalTasks"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"terminatedTasks"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isTerminated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isOk"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624477116759</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastActivity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624477351093</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt; Starting job for seed-project with 1 tasks</span><span class="se">\n</span><span class="s2">   MIN SCORE = 2.0%</span><span class="se">\n\n</span><span class="s2">get-an-url &gt; Adding to run queue</span><span class="se">\n</span><span class="s2">get-an-url &gt; Finished execution</span><span class="se">\n\n</span><span class="s2">SCORE = 100.0%</span><span class="se">\n</span><span class="s2">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-2'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:53:53 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:53:53 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-jobs-trackingnumber-abort'>GET /JOBS/{TRACKINGNUMBER}/ABORT</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-3'>Summary</h3>
+<p>The <strong>GET /JOBS/{TRACKINGNUMBER}/ABORT</strong> endpoint stops a Project profile Job Run task.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/jobs/{trackingNumber}/abort'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>trackingNumber</td>
+<td>path</td>
+<td>The Tracking Number ID of the Project Job</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-3'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-3'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint: </p>
+<h4 id='curl-request-3'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort&#39;</code></p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort</code> </p>
+<h3 id='sample-response-body-3'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:57:49 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 19:57:49 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-projects-project-jobs'>GET /PROJECTS/{PROJECT}/JOBS</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-4'>Summary</h3>
+<p>The <strong>GET /PROJECTS/{PROJECT}/JOBS</strong> endpoint retrieves the Jobs history of a Project profile.</p>
+<h3 id='parameters-4'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/projects/{project}/jobs?{from}&amp;{size}'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>from</td>
+<td>query</td>
+<td>The list number ID of the Project Job.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>size</td>
+<td>query</td>
+<td>The amount of jobs data objects to retreive.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+</tbody></table>
+<h3 id='responses-4'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-4'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint: </p>
+<h4 id='curl-request-4'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1&#39;</code></p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1</code> </p>
+<h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"executionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new-seed-job"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalTasks"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"terminatedTasks"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isTerminated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isOk"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624477116759</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastActivity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624477351093</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt; Starting job for seed-project with 1 tasks</span><span class="se">\n</span><span class="s2">   MIN SCORE = 2.0%</span><span class="se">\n\n</span><span class="s2">get-an-url &gt; Adding to run queue</span><span class="se">\n</span><span class="s2">get-an-url &gt; Finished execution</span><span class="se">\n\n</span><span class="s2">SCORE = 100.0%</span><span class="se">\n</span><span class="s2">"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-4'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:07:08 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:07:08 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

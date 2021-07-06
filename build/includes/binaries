@@ -1,0 +1,72 @@
+<h1 id='binaries'>Binaries</h1>
+<p>The Binaries resource enables you to interact with the Test Case Presets in Jeeves.
+The following table describes the available endpoints of the Binaries resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#get-binaries" class="get-endpoint-word">GET</a> /binaries</td>
+<td>Retrieves the name of the Presets available to create a Test Case.</td>
+</tr>
+</tbody></table>
+<h2 id='get-binaries'>GET /BINARIES</h2>
+<p class="get-endpoint">GET</p>
+<h3 id='summary'>Summary</h3>
+<p>The <strong>GET /BINARIES</strong> endpoint retrieves the name of the Presets available to create a Test Case.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/binaries'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint: </p>
+<h4 id='curl'>cURL</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries&#39;</code></p>
+<h4 id='request-url'>Request URL</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries</code></p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"GetASingleDynamicUrl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"GetASingleUrl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"GetASingleUrlChangingAHeaderValue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"GetASingleUrlChangingAPathParameter"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"GetASingleUrlChangingAQueryValue"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"GetASingleUrlFromDifferentHosts"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"PostToASingleUrl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"PostToASingleUrlChangingAQueryValue"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fri, 18 Jun 2021 20:48:23 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fri, 18 Jun 2021 20:48:23 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

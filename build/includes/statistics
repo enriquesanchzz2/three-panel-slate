@@ -1,0 +1,376 @@
+<h1 id='statistics'>Statistics</h1>
+<p>The Statistics resource enables you to interact with the Statistics Forms files of a Test Case. The following table describes the available endpoints of the Statistics resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#get-statistics-projects-project-testcases-testcase" class="get-endpoint-word">GET</a> /statistics/projects/{project}/testcases/{testcase}</td>
+<td>Retrieves the Statistics of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#get-statistics-projects-project-testcases-testcase-config" class="get-endpoint-word">GET</a>  /statistics/projects/{project}/testcases/{testcase}/config</td>
+<td>Retrieves the Statistics configuration of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#put-statistics-projects-project-testcases-testcase-config" class="put-endpoint-word">PUT</a>  /statistics/projects/{project}/testcases/{testcase}/config</td>
+<td>Updates the Statistics time configuration of a Test Case.</td>
+</tr>
+</tbody></table>
+<h2 id='get-statistics-projects-project-testcases-testcase'>GET /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary'>Summary</h3>
+<p>The <strong>GET /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint retrieves the Statistics of a Test Case.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/statistics/projects/{project}/testcases/{testcase}?{from}&amp;{size}'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>path</td>
+<td>The name of the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>from</td>
+<td>query</td>
+<td>The start list number of the Run Statistics.</td>
+<td>No</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>size</td>
+<td>query</td>
+<td>The amout of results to retrieve.</td>
+<td>No</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url?from=1&amp;size=1&#39;</code></p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url?from=1&amp;size=1</code> </p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624461533724</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"getasingleurl-20210623152155525"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"failed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mean"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responseTimeLowerBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responseTimeHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responseTimeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responsesUnderLowerBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responsesUnderHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"responsesAboveHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"healthChecksTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"healthChecksOk"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"healthChecksWarning"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"healthChecksFailed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:28:50 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:28:50 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-statistics-projects-project-testcases-testcase-config'>GET /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}/CONFIG</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-2'>Summary</h3>
+<p>The <strong>GET /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}/CONFIG</strong> endpoint retrieves the Statistics configuration of a Test Case.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/statistics/projects/{project}/testcases/{testcase}/config'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>path</td>
+<td>The name of the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-2'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-2'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-2'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url/config&#39;</code></p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url/config</code> </p>
+<h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reponseTimeLowerBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reponseTimeHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"responseTimeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reponseTimeLowerBound"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delimiter for the first group in the time ranges chart, where t &lt; lowerBound"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ms"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"allowDecimals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reponseTimeHigherBound"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delimiter for the second group in the time ranges chart, where lowerBound &lt; t &lt; higherBound"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ms"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"allowDecimals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"responseTimeout"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period for which a request with no activity is considered a failure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ms"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"allowDecimals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-2'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:38:16 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:38:16 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='put-statistics-projects-project-testcases-testcase-config'>PUT /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}/CONFIG</h2>
+<p class="put-endpoint">PUT</p> 
+<h3 id='summary-3'>Summary</h3>
+<p>The <strong>PUT /STATISTICS/PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}/CONFIG</strong> endpoint
+updates the Statistics time configuration of a Test Case.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'{API Environment URL}/statistics/projects/{project}/testcases/{testcase}/config'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>path</td>
+<td>The name of the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>The JSON file with the data object of the Statistics configuration.</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reponseTimeLowerBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reponseTimeHigherBound"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"responseTimeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">10001</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></br></p>
+
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reponseTimeLowerBound</td>
+<td>yes</td>
+<td>Integer</td>
+<td>The lowest expected time in which a request gets a response.</td>
+</tr>
+<tr>
+<td>reponseTimeHigherBound</td>
+<td>yes</td>
+<td>Integer</td>
+<td>The highest expected time in which a request gets a response.</td>
+</tr>
+<tr>
+<td>responseTimeout</td>
+<td>yes</td>
+<td>Integer</td>
+<td>The time in which a request is close because it did not get a response.</td>
+</tr>
+</tbody></table>
+<h3 id='responses-3'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-3'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-3'>cURL Request</h4>
+<p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;reponseTimeLowerBound&quot;: 1000, \ 
+   &quot;reponseTimeHigherBound&quot;: 10000, \ 
+   &quot;responseTimeout&quot;: 10001 \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url/config&#39;</code></p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/statistics/projects/seed-project/testcases/get-an-url/config</code> </p>
+<h3 id='sample-response-body-3'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:42:52 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 17:42:52 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

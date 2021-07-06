@@ -1,0 +1,690 @@
+<h1 id='dev'>Dev</h1>
+<p>The Dev resource enables you to interact with the Configuration files of Jeeves. The following table describes the available endpoints of the Dev resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#get-dev-version" class="get-endpoint-word">GET</a>   /dev/version</td>
+<td>Retrieves the current version of Jeeves.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-run-agent" class="get-endpoint-word">GET</a>   /dev/run-agent</td>
+<td>Retrieves the Run Agent details of Jeeves.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-ec2" class="get-endpoint-word">GET</a>  /dev/ec2</td>
+<td>Retrieves the AWS Elasctic Spot Instances.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-es" class="get-endpoint-word">GET</a>  /dev/es</td>
+<td>Retrieves the AWS ElasticBeanstalk Instance.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-s3" class="get-endpoint-word">GET</a>  /dev/s3</td>
+<td>Retrieves the AWS S3 Bucket information.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-s3-project-testcase" class="get-endpoint-word">GET</a>  /dev/s3/{project}/{testcase}</td>
+<td>Retrieves the AWS S3 Buckets Objects location.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-json_header" class="get-endpoint-word">GET</a>  /dev/json_header</td>
+<td>Retrieves the Accepts headers.</td>
+</tr>
+<tr>
+<td><a href="#get-dev-stop" class="get-endpoint-word">GET</a>  /dev/stop</td>
+<td>Stops the Embeded Jetty Server of Jeeves.</td>
+</tr>
+<tr>
+<td><a href="#post-dev-json_post" class="post-endpoint-word">POST</a>  /dev/json_post</td>
+<td>Verifies that the Content Type is a JSON.</td>
+</tr>
+</tbody></table>
+<h2 id='get-dev-version'>GET /DEV/VERSION</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary'>Summary</h3>
+<p>The <strong>GET /DEV/VERSION</strong> endpoint retrieves the current version of Jeeves.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version&#39;</code></p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version</code> </p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.6.6"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:17:00 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:17:00 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-run-agent'>GET /DEV/RUN-AGENT</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-2'>Summary</h3>
+<p>The <strong>GET /DEV/RUN-AGENT</strong> endpoint retrieves the Run Agent details of Jeeves.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses-2'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-2'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-2'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent&#39;</code></p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent</code> </p>
+<h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nameTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-2'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:26:07 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:26:07 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-ec2'>GET /DEV/EC2</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-3'>Summary</h3>
+<p>The <strong>GET /DEV/EC2</strong> endpoint retrieves the AWS Elasctic Spot Instances.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses-3'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-3'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-3'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2&#39;</code></p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2</code> </p>
+<h3 id='sample-response-body-3'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"spot_tags"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amigo-amzn_linux-2-dowjones-base-202105100930"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"machine"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rootDeviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/dev/xvda"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"subnets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"availabilityZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-east-1d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subnetTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"protected"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod-pro-1d"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"vpcTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"availabilityZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-east-1b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subnetTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod-pro-1b"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"protected"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"vpcTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"availabilityZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-east-1a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subnetTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod-pro-1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"protected"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"vpcTags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris.Tersteeg@dowjones.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consumer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"component"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sharsvc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"servicename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djcs/consumer/sharsvc"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"fleetRequestHistory"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-0b7bd8e4-fa0b-4106-ab8c-94eabfd0a630"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-21a62414-cdaa-4d6e-90e3-cc189692f514"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-36f926c7-b4dc-4065-b57c-4a991f8d4ab5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-40cb3437-50d0-4d2e-9448-f9f138528024"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-438d36c0-900d-4b45-a2a2-6ab39d30f1a1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-709e8d59-fd86-4c8b-aa98-edd5953cc512"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-9432bc05-1054-4db8-b6aa-d14074904636"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-e47b4be5-dc44-43ce-8644-44fc01cd8e72"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sfr-e957d0d3-dfde-4668-a226-fa8c5e885fe5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:29:41 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 15:29:41 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-es'>GET /DEV/ES</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-4'>Summary</h3>
+<p>The <strong>GET /DEV/ES</strong> endpoint retrieves the AWS ElasticBeanstalk Instance.</p>
+<h3 id='responses-4'>Responses</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es'</span>
+</code></pre></div>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='parameters-4'>Parameters</h3>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='sample-request-4'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-4'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es&#39;</code></p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es</code> </p>
+<h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djsp-connonprodshdsvc-jeeves"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cluster_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"827737064932:djsp-connonprodshdsvc-jeeves"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tagline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You Know, for Search"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-4'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:09:33 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:09:33 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-s3'>GET /DEV/S3</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-5'>Summary</h3>
+<p>The <strong>GET /DEV/S3</strong> endpoint retrieves the AWS S3 Bucket information.</p>
+<h3 id='parameters-5'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses-5'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-5'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-5'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3&#39;</code></p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3</code> </p>
+<h3 id='sample-response-body-5'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djss-dev"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3Operations.getBucketLocation"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-5'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:10:49 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:10:49 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-s3-project-testcase'>GET /DEV/S3/{PROJECT}/{TESTCASE}</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-6'>Summary</h3>
+<p>The <strong>GET /DEV/S3/{PROJECT}/{TESTCASE}</strong> endpoint retrieves the AWS S3 Buckets Objects location.</p>
+<h3 id='parameters-6'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Test Case Project.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+<tr>
+<td>testcase</td>
+<td>path</td>
+<td>The name of the Test Case.</td>
+<td>Yes</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='responses-6'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-6'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-6'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url&#39;</code></p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url</code> </p>
+<h3 id='sample-response-body-6'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/config.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623152155525.zip"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623154221156.zip"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623194056265.zip"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-6'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:13:45 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:13:45 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-json_header'>GET /DEV/JSON_HEADER</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-7'>Summary</h3>
+<p>The <strong>GET /DEV/JSON_HEADER</strong> endpoint retrieves the Accepts headers.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header'</span>
+</code></pre></div>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses-7'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-7'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-7'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header&#39;</code></p>
+<h4 id='http-request-7'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header</code> </p>
+<h3 id='sample-response-body-7'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-7'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:20:29 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:20:29 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='get-dev-stop'>GET /DEV/STOP</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary-8'>Summary</h3>
+<p>The <strong>GET /DEV/STOP</strong> endpoint stops the Embeded Jetty Server of Jeeves.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<p>This endpoint does not allow extra parameters.</p>
+<h3 id='responses-8'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>404</td>
+<td>The server has stopped</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-8'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-8'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: text/plain&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop&#39;</code></p>
+<h4 id='http-request-8'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop</code> </p>
+<h3 id='sample-response-body-8'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-8'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/plain;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:30:34 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:30:34 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='post-dev-json_post'>POST /DEV/JSON_POST</h2>
+<p class="post-endpoint">POST</p> 
+<h3 id='summary-9'>Summary</h3>
+<p>The <strong>POST /DEV/JSON_POST</strong> endpoint verifies that the Content Type is a JSON.</p>
+<h3 id='parameters-9'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{ \ 
+   "ok": true \ 
+ }'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>The JSON file with the data object to set the Content Type.</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></br></p>
+
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ok</td>
+<td>yes</td>
+<td>Boolean</td>
+<td>indicates that the Content Type is a JSON.</td>
+</tr>
+</tbody></table>
+<h3 id='responses-9'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-9'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-9'>cURL Request</h4>
+<p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;ok&quot;: true \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post&#39;</code></p>
+<h4 id='http-request-9'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post</code> </p>
+<h3 id='sample-response-body-9'>Sample Response Body</h3>
+<p>This endpoint does not have a Response Body.</p>
+<h3 id='sample-response-headers-9'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:49:42 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thu, 24 Jun 2021 16:49:42 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

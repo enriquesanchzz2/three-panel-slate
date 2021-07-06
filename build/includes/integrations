@@ -1,0 +1,271 @@
+<h1 id='integrations'>Integrations</h1>
+<p>The Integrations resource enables you to interact with the Integration configuration files of a Test Case. The following table describes the available endpoints of the Integration resource:</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#get-integrations-projects-project-slack-channel-notifier" class="get-endpoint-word">GET</a>  /integrations/projects/{project}/slack/channel-notifier</td>
+<td>Retrieves the Integrations confifguration file of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#put-integrations-projects-project-slack-channel-notifier" class="put-endpoint-word">PUT</a>   /integrations/projects/{project}/slack/channel-notifier</td>
+<td>Updates the Integrations confifguration file of a Test Case.</td>
+</tr>
+</tbody></table>
+<h2 id='get-integrations-projects-project-slack-channel-notifier'>GET /INTEGRATIONS/PROJECTS/{PROJECT}/SLACK/CHANNEL-NOTIFIER</h2>
+<p class="get-endpoint">GET</p> 
+<h3 id='summary'>Summary</h3>
+<p>The <strong>GET /INTEGRATIONS/PROJECTS/{PROJECT}/SLACK/CHANNEL-NOTIFIER</strong> endpoint retrieves the Integrations confifguration file of a Test Case.</p>
+<h3 id='parameters'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'{API Environment URL}/integrations/projects/{project}/slack/channel-notifier'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project.</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody></table>
+<h3 id='responses'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request'>cURL Request</h4>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-jeeves-slack"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"webhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"notificationTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARNING"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alertTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BAD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"channelName"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The name of the slack channel."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[[a-z]|[0-9]|[-_]]*"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxlength"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhookUrl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Webhook URL with the permits to publish in the slack channel."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxlength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2083</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notificationTrigger"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARNING"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The trigger for the status notification."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"WARNING"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BAD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"NONE"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alertTrigger"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BAD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"placeholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The trigger for the @channel alert."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"WARNING"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BAD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"NONE"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624473672714</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 18:41:18 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 18:41:18 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transfer-encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chunked"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>
+<h2 id='put-integrations-projects-project-slack-channel-notifier'>PUT /INTEGRATIONS/PROJECTS/{PROJECT}/SLACK/CHANNEL-NOTIFIER</h2>
+<p class="put-endpoint">PUT</p> 
+<h3 id='summary-2'>Summary</h3>
+<p>The <strong>PUT /INTEGRATIONS/PROJECTS/{PROJECT}/SLACK/CHANNEL-NOTIFIER</strong> enpoint updates the Integrations confifguration file of a Test Case. </p>
+<h3 id='parameters-2'>Parameters</h3>
+<blockquote>
+<p>Use this cURL to make a request to this endpoint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'{API Environment URL}/integrations/projects/{project}/slack/channel-notifier'</span>
+</code></pre></div>
+<p>This endpoint allows the following parameters:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>path</td>
+<td>The name of the Project with the Test Case.</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>The JSON file with the data object for the Slack integration.</td>
+<td>Yes</td>
+<td>JSON file</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body parameter content example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-jeeves-slack"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"webhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hooks.slack.com/services/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"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"notificationTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"alertTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARNING"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p></br></p>
+
+<p>This tables lists the parameters of the body JSON file:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+<th>Expected Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>channelName</td>
+<td>yes</td>
+<td>String</td>
+<td>The name of the Slack channel for the notifications.</td>
+<td>The Slack channel name witouth the # symbol</td>
+</tr>
+<tr>
+<td>webhookUrl</td>
+<td>yes</td>
+<td>String</td>
+<td>The WebHook URL to integrate Jeeves to Slack.</td>
+<td>https://hooks.slack.com/services/{Slack WebHook ID}</td>
+</tr>
+<tr>
+<td>notificationTrigger</td>
+<td>String</td>
+<td>Integer</td>
+<td>The type of success that triggers a notification.</td>
+<td>&quot;OK&quot;</br>&quot;WARNING&quot;</br>&quot;BAD&quot;</br>&quot;NONE&quot;</td>
+</tr>
+<tr>
+<td>alertTrigger</td>
+<td>String</td>
+<td>String</td>
+<td>The type of success that triggers an alert.</td>
+<td>&quot;OK&quot;</br>&quot;WARNING&quot;</br>&quot;BAD&quot;</br>&quot;NONE&quot;</td>
+</tr>
+</tbody></table>
+<h3 id='responses-2'>Responses</h3>
+<p>This endpoint receives the following response code:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Updated</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-2'>Sample Request</h3>
+<p>These are examples of an API request to this endpoint:</p>
+<h4 id='curl-request-2'>cURL Request</h4>
+<p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
+   &quot;channelName&quot;: &quot;test-jeeves-slack&quot;, \ 
+   &quot;webhookUrl&quot;: &quot;https://hooks.slack.com/services/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&quot;, \ 
+   &quot;notificationTrigger&quot;: &quot;OK&quot;, \ 
+   &quot;alertTrigger&quot;: &quot;WARNING&quot; \ 
+ }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
+<h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
+<h3 id='sample-response-headers-2'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access-control-allow-origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cache-control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache, private, no-store"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content-type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json;charset=utf-8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 18:52:44 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 23 Jun 2021 18:52:44 GMT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pragma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nginx/1.18.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The sample JSON file at the right of the page presents the Response Headers obtained with the Sample Request.</p>

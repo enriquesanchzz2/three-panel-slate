@@ -1,0 +1,275 @@
+<h1 id='jeeves-api-reference-documentation'>Jeeves API Reference Documentation</h1>
+<p>Jeeves is a monitor tool that helps developers analyze a project’s web performance. With Jeeves, you can do the following:</p>
+
+<ul>
+<li>Design Test Cases to validate service availability and throughput.</li>
+<li>Group load Test Cases by Project profiles.</li>
+<li>Run, stop, and reconfigure Test Cases to validate service availability.</li>
+<li>Monitor a website performance through different Test Cases.</li>
+<li>Obtain detailed reports with graphics about their website performance.</li>
+</ul>
+
+<p>This documentation guides you through the resources, methods, and endpoints of the Jeeves API. It also contains examples of request bodies and responses, so that you can start working with the Jeeves API as smoothly as possible.</p>
+
+<p>The following table contains the resources available in the Jeeves API:</p>
+
+<table><thead>
+<tr>
+<th>API Resource</th>
+<th>Endpoint</th>
+<th>Endpoint Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#projects"> <strong>Projects</strong></a></td>
+<td><a href="#get-projects" class="get-endpoint-word">GET</a> /projects</td>
+<td>Retrieves the data objects of the Project profiles available in Jeeves.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#post-projects" class="post-endpoint-word">POST</a> /projects</td>
+<td>Creates a new Project profile.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-projects-project" class="put-endpoint-word">PUT</a> /projects/{project}</td>
+<td>Updates the data object of a Project profile.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#delete-projects-project" class="delete-endpoint-word">DELETE</a> /projects/{project}</td>
+<td>Deletes a Project profile.</td>
+</tr>
+<tr>
+<td><a href="#Binaries"><strong>Binaries</strong></a></td>
+<td><a href="#get-binaries" class="get-endpoint-word">GET</a> /binaries</td>
+<td>Retrieves the name of the Presets available to create a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#Test-Cases"><strong>Test Cases</strong></a></td>
+<td><a href="#get-projects-project-testcases" class="get-endpoint-word">GET</a> /projects/{project}/testcases</td>
+<td>Retrieves the Test Cases of a Project profile.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#post-projects-project-testcases" class="post-endpoint-word">POST</a> /projects/{project}/testcases</td>
+<td>Creates a new Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#delete-projects-project-testcases" class="delete-endpoint-word">DELETE</a> /projects/{project}/testcases</td>
+<td>Deletes all Test Cases of a Project profile.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-projects-project-testcases-testcase" class="get-endpoint-word">GET</a> /projects/{project}/testcases/{testcase}</td>
+<td>Retrieves a Test Case data object.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#post-projects-project-testcases-testcase" class="post-endpoint-word">POST</a> /projects/{project}/testcases/{testcase}</td>
+<td>Duplicates a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-projects-project-testcases-testcase" class="put-endpoint-word">PUT</a> /projects/{project}/testcases/{testcase}</td>
+<td>Updates a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#delete-projects-project-testcases-testcase" class="delete-endpoint-word">DELETE</a> /projects/{project}/testcases/{testcase}</td>
+<td>Deletes a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#config"><strong>Config</strong></a></td>
+<td><a href="#get-config-projects-project-testcases-testcase-forms-preview" class="get-endpoint-word">GET</a>  /config/projects/{project}/testcases/{testcase}/forms/preview</td>
+<td>Retreives the data objects of a Test Case configuration forms.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-config-projects-project-testcases-testcase-forms-form-preview" class="get-endpoint-word">GET</a> /config/projects/{project}/testcases/{testcase}/forms/{form}/preview</td>
+<td>Retreives the data object of a Test Case specific configuration form.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-config-projects-project-testcases-testcase-forms-form-validation" class="get-endpoint-word">GET</a>  /config/projects/{project}/testcases/{testcase}/forms/{form}/validation</td>
+<td>Retreives the data object with the valid values of a Test Case specific configuration form.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#post-config-projects-project-testcases-testcase-forms-form" class="post-endpoint-word">POST</a>  /config/projects/{project}/testcases/{testcase}/forms/{form}</td>
+<td>Uploads the file with the data object of a Test Case specific configuration form.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-config-projects-project-testcases-testcase-forms" class="put-endpoint-word">PUT</a>  /config/projects/{project}/testcases/{testcase}/forms</td>
+<td>Updates a Test Case Preset.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-config-projects-project-testcases-testcase-forms-form" class="put-endpoint-word">PUT</a>  /config/projects/{project}/testcases/{testcase}/forms/{form}</td>
+<td>Updates the file with the data object of a Test Case specific configuration form.</td>
+</tr>
+<tr>
+<td><a href="#runner"><strong>Runner</strong></a></td>
+<td><a href="#get-runner-projects-project-testcases-testcase-run" class="get-endpoint-word">GET</a> /runner/projects/{project}/testcases/{testcase}/run</td>
+<td>Runs a specific Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-runner-projects-project-testcases-testcase-status" class="get-endpoint-word">GET</a> /runner/projects/{project}/testcases/{test case}/status</td>
+<td>Retrieves the Run Status of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-runner-projects-project-testcases-testcase-stop" class="get-endpoint-word">GET</a> /runner/projects/{project}/testcases/{testcase}/stop</td>
+<td>Stops the Run task of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-runner-status" class="get-endpoint-word">GET</a> /runner/status</td>
+<td>Retrieves the status of the active and pending Test Cases.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-runner-projects-project-testcases-testcase-options" class="get-endpoint-word">GET</a> /runner/projects/{project}/testcases/{testcase}/options</td>
+<td>Retrieves the Run Agent configuration of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-runner-projects-project-testcases-testcase-options" class="put-endpoint-word">PUT</a> /runner/projects/{project}/testcases/{testcase}/options</td>
+<td>Updates the Run Agent configuration of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#Statistics"><strong>Statistics</strong></a></td>
+<td><a href="#get-statistics-projects-project-testcases-testcase" class="get-endpoint-word">GET</a> /statistics/projects/{project}/testcases/{testcase}</td>
+<td>Retrieves the Statistics of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-statistics-projects-project-testcases-testcase-config" class="get-endpoint-word">GET</a>  /statistics/projects/{project}/testcases/{testcase}/config</td>
+<td>Retrieves the Statistics configuration of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-statistics-projects-project-testcases-testcase-config" class="put-endpoint-word">PUT</a>  /statistics/projects/{project}/testcases/{testcase}/config</td>
+<td>Updates the Statistics time configuration of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#"><strong>Health Checks</strong></a></td>
+<td><a href="#get-health-checks-projects-project-testcases-testcase-config" class="get-endpoint-word">GET</a>  /health-checks/projects/{project}/testcases/{testcase}/config</td>
+<td>Retrieves the Health Checks confifgurations of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-health-checks-projects-project-testcases-testcase-config" class="put-endpoint-word">PUT</a>   /health-checks/projects/{project}/testcases/{testcase}/config</td>
+<td>Updates the Health Checks confifgurations of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#integrations"><strong>Integrations</strong></a></td>
+<td><a href="#get-integrations-projects-project-slack-channel-notifier" class="get-endpoint-word">GET</a>  /integrations/projects/{project}/slack/channel-notifier</td>
+<td>Retrieves the Integrations confifguration file of a Test Case.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#put-integrations-projects-project-slack-channel-notifier" class="put-endpoint-word">PUT</a>   /integrations/projects/{project}/slack/channel-notifier</td>
+<td>Updates the Integrations confifguration file of a Test Case.</td>
+</tr>
+<tr>
+<td><a href="#jobs"><strong>Jobs</strong></a></td>
+<td><a href="#post-jobs-start" class="post-endpoint-word">POST</a> /jobs/start</td>
+<td>Starts a Project profile Job Run task.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-jobs-trackingnumber-status" class="get-endpoint-word">GET</a> /jobs/{trackingNumber}/status</td>
+<td>Retrieves the status of a Project profile Job.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-jobs-trackingnumber-abort" class="get-endpoint-word">GET</a> /jobs/trackingNumber}/abort</td>
+<td>Stops a Project profile Job Run task.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-projects-project-jobs" class="get-endpoint-word">GET</a> /projects/{project}/jobs</td>
+<td>Retrieves the Jobs history of a Project profile.</td>
+</tr>
+<tr>
+<td><a href="#dev"><strong>Dev</strong></a></td>
+<td><a href="#get-dev-version" class="get-endpoint-word">GET</a>   /dev/version</td>
+<td>Retrieves the current version of Jeeves.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-run-agent" class="get-endpoint-word">GET</a>   /dev/run-agent</td>
+<td>Retrieves the Run Agent details of Jeeves.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-ec2" class="get-endpoint-word">GET</a>  /dev/ec2</td>
+<td>Retrieves the AWS Elasctic Spot Instances.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-es" class="get-endpoint-word">GET</a>  /dev/es</td>
+<td>Retrieves the AWS ElasticBeanstalk Instance.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-s3" class="get-endpoint-word">GET</a>  /dev/s3</td>
+<td>Retrieves the AWS S3 Bucket information.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-s3-project-testcase" class="get-endpoint-word">GET</a>  /dev/s3/{project}/{testcase}</td>
+<td>Retrieves the AWS S3 Buckets Objects location.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-json_header" class="get-endpoint-word">GET</a>  /dev/json_header</td>
+<td>Retrieves the Accepts headers.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#get-dev-stop" class="get-endpoint-word">GET</a>  /dev/stop</td>
+<td>Stops the Embeded Jetty Server of Jeeves.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#post-dev-json_post" class="post-endpoint-word">POST</a>  /dev/json_post</td>
+<td>Verifies that the Content Type is a JSON.</td>
+</tr>
+</tbody></table>
+<h1 id='getting-started'>Getting Started</h1>
+<p>To start using the Jeeves API you must be conntected to the Dow Jones corporate network through GlobalProtect VPN.
+To learn how to configure and connect to GlobalProtect in your computer, see the <a href="https://docs.google.com/document/d/1vZSGBWDmi5Cnw8Hx1e7DLc6lRKgb321l4tsGZI2P9QQ/edit?usp=sharing">Guide to Using the GlobalProtect VPN</a>.</p>
+<h2 id='api-environment'>API Environment</h2>
+<p>To use the cURL and HTTP sample requests in your environment, change the <code>{API Environment URL}</code> parameter for one of the available environments in Jeeves. </p>
+
+<p>The following table lists the available enviroments and their URL to work with the Jeeves API: </p>
+
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>Environment URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>localhost</td>
+<td>http://localhost:9000/api</td>
+</tr>
+<tr>
+<td>nonprod</td>
+<td>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api</td>
+</tr>
+<tr>
+<td>stag</td>
+<td>http://jeeves-api-stag.us-east-1.elasticbeanstalk.com/api</td>
+</tr>
+</tbody></table>
+
+<aside class="notice"> For examples of API request in this documentation, all API endpoint calls use the <code>seed-project</code> Project profile in Jeeves, and the <code>nonprod</code> environment. 
+</aside>
+<h2 id='working-with-the-api-locally'>Working with the API Locally</h2>
+<p>To work with the Jeeves API in your Localhost, you must configure your API Local Workspace. To configure your API Local Workspace, see the guide in the <a href="https://github.dowjones.net/SharedServices/Jeeves.API/blob/master/README/api-local-config.md">Jeeves API Oficial Repository Documentation</a>. </p>
