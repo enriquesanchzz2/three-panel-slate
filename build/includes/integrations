@@ -62,11 +62,11 @@
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-jeeves-slack"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-watson-slack"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"webhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"notificationTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARNING"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"alertTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BAD"</span><span class="p">,</span><span class="w">
@@ -178,7 +178,7 @@
 <p>body parameter content example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-jeeves-slack"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"channelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-watson-slack"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"webhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hooks.slack.com/services/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"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"notificationTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"alertTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARNING"</span><span class="w">
@@ -208,7 +208,7 @@
 <td>webhookUrl</td>
 <td>yes</td>
 <td>String</td>
-<td>The WebHook URL to integrate Jeeves to Slack.</td>
+<td>The WebHook URL to integrate Watson to Slack.</td>
 <td>https://hooks.slack.com/services/{Slack WebHook ID}</td>
 </tr>
 <tr>
@@ -244,13 +244,13 @@
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-2'>cURL Request</h4>
 <p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
-   &quot;channelName&quot;: &quot;test-jeeves-slack&quot;, \ 
+   &quot;channelName&quot;: &quot;test-watson-slack&quot;, \ 
    &quot;webhookUrl&quot;: &quot;https://hooks.slack.com/services/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&quot;, \ 
    &quot;notificationTrigger&quot;: &quot;OK&quot;, \ 
    &quot;alertTrigger&quot;: &quot;WARNING&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/integrations/projects/seed-project/slack/channel-notifier</code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>

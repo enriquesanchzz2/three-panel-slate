@@ -119,9 +119,9 @@
    &quot;project&quot;: &quot;seed-project&quot;, \ 
    &quot;executionNotes&quot;: &quot;new-seed-job&quot;, \ 
    &quot;requireApprovingChecks&quot;: 2 \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/start</code> </p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb"</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
@@ -188,9 +188,9 @@
 <h3 id='sample-request-2'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-2'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/status</code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"executionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new-seed-job"</span><span class="p">,</span><span class="w">
@@ -266,9 +266,9 @@
 <h3 id='sample-request-3'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-3'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort&#39;</code></p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/jobs/83bb7b6ffc87d734c8a117d4c7e508a97e671e9adaf8d32c69530c78ccd959fb/abort</code> </p>
 <h3 id='sample-response-body-3'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -346,9 +346,9 @@
 <h3 id='sample-request-4'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-4'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1&#39;</code></p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/jobs?from=0&amp;size=1</code> </p>
 <h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">

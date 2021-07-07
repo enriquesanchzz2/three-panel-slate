@@ -85,10 +85,10 @@
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/run&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/run&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/run</code> </p>
-<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"jeeves.core.model.impl.runagents.FleetObserver@2cc70ca8"</span><span class="w">
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/run</code> </p>
+<h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"watson.core.model.impl.runagents.FleetObserver@2cc70ca8"</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
 <h3 id='sample-response-headers'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -129,9 +129,9 @@
 <h3 id='sample-request-2'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-2'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/status&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/status&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/status</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/status</code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624557854639</span><span class="p">,</span><span class="w">
   </span><span class="nl">"activeTasks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -217,9 +217,9 @@
 <h3 id='sample-request-3'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-3'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/status&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/status&#39;</code></p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/status</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/status</code> </p>
 <h3 id='sample-response-body-3'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"logs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[RUN AGENT] Joining the pending queue...   # 1 second after launch</span><span class="se">\n</span><span class="s2">[RUN AGENT] Executing run command...   # 1 second after launch</span><span class="se">\n</span><span class="s2">[RUN AGENT] Requesting spot fleet...</span><span class="se">\n</span><span class="s2">[RUN AGENT] Launched fleet with 1 spots </span><span class="se">\n</span><span class="s2">[RUN AGENT] Run command successfully executed</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"isRunning"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -299,9 +299,9 @@
 <h3 id='sample-request-4'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-4'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/stop&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/stop&#39;</code></p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/stop</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/stop</code> </p>
 <h3 id='sample-response-body-4'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-4'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -372,9 +372,9 @@
 <h3 id='sample-request-5'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-5'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options&#39;</code></p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options</code> </p>
 <h3 id='sample-response-body-5'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -545,9 +545,9 @@
     &quot;peers&quot;:1, \ 
     &quot;warmup-url&quot;:&quot;https://www.google.com/&quot;, \ 
     &quot;spot-size&quot;:&quot;t2.micro&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options&#39;</code></p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/runner/projects/seed-project/testcases/get-an-url/options</code> </p>
 <h3 id='sample-response-body-6'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-6'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">

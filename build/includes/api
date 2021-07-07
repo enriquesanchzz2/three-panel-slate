@@ -1,5 +1,5 @@
-<h1 id='jeeves-api-reference-documentation'>Jeeves API Reference Documentation</h1>
-<p>Jeeves is a monitor tool that helps developers analyze a project’s web performance. With Jeeves, you can do the following:</p>
+<h1 id='watson-api-reference-documentation'>Watson API Reference Documentation</h1>
+<p>Watson is a monitor tool that helps developers analyze a project’s web performance. With Watson, you can do the following:</p>
 
 <ul>
 <li>Design Test Cases to validate service availability and throughput.</li>
@@ -9,9 +9,9 @@
 <li>Obtain detailed reports with graphics about their website performance.</li>
 </ul>
 
-<p>This documentation guides you through the resources, methods, and endpoints of the Jeeves API. It also contains examples of request bodies and responses, so that you can start working with the Jeeves API as smoothly as possible.</p>
+<p>This documentation guides you through the resources, methods, and endpoints of the Watson API. It also contains examples of request bodies and responses, so that you can start working with the Watson API as smoothly as possible.</p>
 
-<p>The following table contains the resources available in the Jeeves API:</p>
+<p>The following table contains the resources available in the Watson API:</p>
 
 <table><thead>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td><a href="#projects"> <strong>Projects</strong></a></td>
 <td><a href="#get-projects" class="get-endpoint-word">GET</a> /projects</td>
-<td>Retrieves the data objects of the Project profiles available in Jeeves.</td>
+<td>Retrieves the data objects of the Project profiles available in Watson.</td>
 </tr>
 <tr>
 <td></td>
@@ -198,12 +198,12 @@
 <tr>
 <td><a href="#dev"><strong>Dev</strong></a></td>
 <td><a href="#get-dev-version" class="get-endpoint-word">GET</a>   /dev/version</td>
-<td>Retrieves the current version of Jeeves.</td>
+<td>Retrieves the current version of Watson.</td>
 </tr>
 <tr>
 <td></td>
 <td><a href="#get-dev-run-agent" class="get-endpoint-word">GET</a>   /dev/run-agent</td>
-<td>Retrieves the Run Agent details of Jeeves.</td>
+<td>Retrieves the Run Agent details of Watson.</td>
 </tr>
 <tr>
 <td></td>
@@ -233,7 +233,7 @@
 <tr>
 <td></td>
 <td><a href="#get-dev-stop" class="get-endpoint-word">GET</a>  /dev/stop</td>
-<td>Stops the Embeded Jetty Server of Jeeves.</td>
+<td>Stops the Embeded Jetty Server of Watson.</td>
 </tr>
 <tr>
 <td></td>
@@ -242,12 +242,12 @@
 </tr>
 </tbody></table>
 <h1 id='getting-started'>Getting Started</h1>
-<p>To start using the Jeeves API you must be conntected to the Dow Jones corporate network through GlobalProtect VPN.
+<p>To start using the Watson API you must be conntected to the Good Corp. corporate network through GlobalProtect VPN.
 To learn how to configure and connect to GlobalProtect in your computer, see the <a href="https://docs.google.com/document/d/1vZSGBWDmi5Cnw8Hx1e7DLc6lRKgb321l4tsGZI2P9QQ/edit?usp=sharing">Guide to Using the GlobalProtect VPN</a>.</p>
 <h2 id='api-environment'>API Environment</h2>
-<p>To use the cURL and HTTP sample requests in your environment, change the <code>{API Environment URL}</code> parameter for one of the available environments in Jeeves. </p>
+<p>To use the cURL and HTTP sample requests in your environment, change the <code>{API Environment URL}</code> parameter for one of the available environments in Watson. </p>
 
-<p>The following table lists the available enviroments and their URL to work with the Jeeves API: </p>
+<p>The following table lists the available enviroments and their URL to work with the Watson API: </p>
 
 <table><thead>
 <tr>
@@ -261,15 +261,15 @@ To learn how to configure and connect to GlobalProtect in your computer, see the
 </tr>
 <tr>
 <td>nonprod</td>
-<td>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api</td>
+<td>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api</td>
 </tr>
 <tr>
 <td>stag</td>
-<td>http://jeeves-api-stag.us-east-1.elasticbeanstalk.com/api</td>
+<td>http://watson-api-stag.us-east-1.elasticbeanstalk.com/api</td>
 </tr>
 </tbody></table>
 
-<aside class="notice"> For examples of API request in this documentation, all API endpoint calls use the <code>seed-project</code> Project profile in Jeeves, and the <code>nonprod</code> environment. 
+<aside class="notice"> For examples of API request in this documentation, all API endpoint calls use the <code>seed-project</code> Project profile in Watson, and the <code>nonprod</code> environment. 
 </aside>
 <h2 id='working-with-the-api-locally'>Working with the API Locally</h2>
-<p>To work with the Jeeves API in your Localhost, you must configure your API Local Workspace. To configure your API Local Workspace, see the guide in the <a href="https://github.dowjones.net/SharedServices/Jeeves.API/blob/master/README/api-local-config.md">Jeeves API Oficial Repository Documentation</a>. </p>
+<p>To work with the Watson API in your Localhost, you must configure your API Local Workspace. To configure your API Local Workspace, see the guide in the <a href="https://github.dowjones.net/SharedServices/Watson.API/blob/master/README/api-local-config.md">Watson API Oficial Repository Documentation</a>. </p>

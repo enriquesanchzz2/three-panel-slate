@@ -1,11 +1,11 @@
 # Projects
-The Projects resource enables you to interact with the Project profiles in Jeeves.
+The Projects resource enables you to interact with the Project profiles in Watson.
 The following table describes the available endpoints of the Projects resource:
 
 
 | Endpoint | Description |
 | -------- | ----------- |
-| <a href="#get-projects" class="get-endpoint-word">GET</a> /projects | Retrieves the data objects of the Project profiles available in Jeeves. |
+| <a href="#get-projects" class="get-endpoint-word">GET</a> /projects | Retrieves the data objects of the Project profiles available in Watson. |
 | <a href="#post-projects" class="post-endpoint-word">POST</a> /projects | Creates a new Project profile. |
 | <a href="#put-projects-project" class="put-endpoint-word">PUT</a> /projects/{project} | Updates the data object of a Project profile. |
 | <a href="#delete-projects-project" class="delete-endpoint-word">DELETE</a> /projects/{project} | Deletes a Project profile. |
@@ -15,7 +15,7 @@ The following table describes the available endpoints of the Projects resource:
 <p class="get-endpoint">GET</p>
 
 ### Summary
-The **GET /PROJECTS** endpoint retrieves the data objects of the Project profiles available in Jeeves. 
+The **GET /PROJECTS** endpoint retrieves the data objects of the Project profiles available in Watson. 
 
 ### Parameters
 > Use this cURL to make a request to this endpoint
@@ -42,10 +42,10 @@ This endpoint receives the following response code:
 These are examples of an API request to this endpoint: 
 
 #### cURL Request
-`curl -X GET --header 'Accept: application/json' 'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects?from=0&size=2'`
+`curl -X GET --header 'Accept: application/json' 'http://watson-nonprod.com/api/projects?from=0&size=2'`
 
 #### HTTP Request
-` http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects?from=0&size=2 `
+` http://watson-nonprod.com/api/projects?from=0&size=2 `
 
 
 
@@ -158,10 +158,10 @@ These are examples of an API request to this endpoint:
    "team": "Project Team", \ 
    "bu": "Project Business Unit", \ 
    "repository": "github.seed.com" \ 
- }' 'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects'`
+ }' 'http://watson-nonprod.com/api/projects'`
 
 #### HTTP Request
-`http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects`
+`http://watson-nonprod.com/api/projects`
  
 
 ### Sample Response Body
@@ -254,11 +254,11 @@ These are examples of an API request to this endpoint:
    "team": "Seed team", \ 
    "bu": "Business Seed Unit”, \ 
    "repository": "github.seed.com" \ 
- }' 'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/new-project'`
+ }' 'http://watson-nonprod.com/api/projects/new-project'`
 
 
 #### HTTP Request
-`http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/new-project`
+`http://watson-nonprod.com/api/projects/new-project`
 
 
 ### Sample Response Body
@@ -323,10 +323,10 @@ These are examples of an API request to this endpoint:
 
 #### cURL Request
 `curl -X DELETE --header 'Accept: application/json' 
-'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/new-project'`
+'http://watson-nonprod.com/api/projects/new-project'`
 
 #### HTTP Request
-`http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/new-project` `
+`http://watson-nonprod.com/api/projects/new-project` `
 
 ### Sample Response Body
 This endpoint does not have a response body.

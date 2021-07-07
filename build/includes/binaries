@@ -1,5 +1,5 @@
 <h1 id='binaries'>Binaries</h1>
-<p>The Binaries resource enables you to interact with the Test Case Presets in Jeeves.
+<p>The Binaries resource enables you to interact with the Test Case Presets in Watson.
 The following table describes the available endpoints of the Binaries resource:</p>
 
 <table><thead>
@@ -41,9 +41,9 @@ The following table describes the available endpoints of the Binaries resource:<
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl'>cURL</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries&#39;</code></p>
 <h4 id='request-url'>Request URL</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries</code></p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/binaries</code></p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="s2">"GetASingleDynamicUrl"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"GetASingleUrl"</span><span class="p">,</span><span class="w">

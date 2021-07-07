@@ -1,5 +1,5 @@
 <h1 id='dev'>Dev</h1>
-<p>The Dev resource enables you to interact with the Configuration files of Jeeves. The following table describes the available endpoints of the Dev resource:</p>
+<p>The Dev resource enables you to interact with the Configuration files of Watson. The following table describes the available endpoints of the Dev resource:</p>
 
 <table><thead>
 <tr>
@@ -9,11 +9,11 @@
 </thead><tbody>
 <tr>
 <td><a href="#get-dev-version" class="get-endpoint-word">GET</a>   /dev/version</td>
-<td>Retrieves the current version of Jeeves.</td>
+<td>Retrieves the current version of Watson.</td>
 </tr>
 <tr>
 <td><a href="#get-dev-run-agent" class="get-endpoint-word">GET</a>   /dev/run-agent</td>
-<td>Retrieves the Run Agent details of Jeeves.</td>
+<td>Retrieves the Run Agent details of Watson.</td>
 </tr>
 <tr>
 <td><a href="#get-dev-ec2" class="get-endpoint-word">GET</a>  /dev/ec2</td>
@@ -37,7 +37,7 @@
 </tr>
 <tr>
 <td><a href="#get-dev-stop" class="get-endpoint-word">GET</a>  /dev/stop</td>
-<td>Stops the Embeded Jetty Server of Jeeves.</td>
+<td>Stops the Embeded Jetty Server of Watson.</td>
 </tr>
 <tr>
 <td><a href="#post-dev-json_post" class="post-endpoint-word">POST</a>  /dev/json_post</td>
@@ -47,12 +47,12 @@
 <h2 id='get-dev-version'>GET /DEV/VERSION</h2>
 <p class="get-endpoint">GET</p> 
 <h3 id='summary'>Summary</h3>
-<p>The <strong>GET /DEV/VERSION</strong> endpoint retrieves the current version of Jeeves.</p>
+<p>The <strong>GET /DEV/VERSION</strong> endpoint retrieves the current version of Watson.</p>
 <h3 id='parameters'>Parameters</h3>
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version'</span>
 </code></pre></div>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses'>Responses</h3>
@@ -72,9 +72,9 @@
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/version</code> </p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.6.6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -99,12 +99,12 @@
 <h2 id='get-dev-run-agent'>GET /DEV/RUN-AGENT</h2>
 <p class="get-endpoint">GET</p> 
 <h3 id='summary-2'>Summary</h3>
-<p>The <strong>GET /DEV/RUN-AGENT</strong> endpoint retrieves the Run Agent details of Jeeves.</p>
+<p>The <strong>GET /DEV/RUN-AGENT</strong> endpoint retrieves the Run Agent details of Watson.</p>
 <h3 id='parameters-2'>Parameters</h3>
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent'</span>
 </code></pre></div>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses-2'>Responses</h3>
@@ -124,9 +124,9 @@
 <h3 id='sample-request-2'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-2'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/run-agent</code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"nameTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con.nonprod.shdsvc.ue1-nonprod"</span><span class="w">
@@ -157,7 +157,7 @@
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2'</span>
 </code></pre></div>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses-3'>Responses</h3>
@@ -177,9 +177,9 @@
 <h3 id='sample-request-3'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-3'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2&#39;</code></p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/ec2</code> </p>
 <h3 id='sample-response-body-3'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"spot_tags"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
   </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -315,7 +315,7 @@
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es'</span>
 </code></pre></div>
 <p>This endpoint receives the following response code:</p>
 
@@ -335,12 +335,12 @@
 <h3 id='sample-request-4'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-4'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es&#39;</code></p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/es</code> </p>
 <h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djsp-connonprodshdsvc-jeeves"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cluster_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"827737064932:djsp-connonprodshdsvc-jeeves"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djsp-connonprodshdsvc-watson"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cluster_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"827737064932:djsp-connonprodshdsvc-watson"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"tagline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You Know, for Search"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -369,7 +369,7 @@
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3'</span>
 </code></pre></div>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses-5'>Responses</h3>
@@ -389,9 +389,9 @@
 <h3 id='sample-request-5'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-5'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3&#39;</code></p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3</code> </p>
 <h3 id='sample-response-body-5'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djss-dev"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3Operations.getBucketLocation"</span><span class="w">
@@ -422,7 +422,7 @@
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url'</span>
 </code></pre></div>
 <p>This endpoint allows the following parameters:</p>
 
@@ -467,20 +467,20 @@
 <h3 id='sample-request-6'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-6'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url&#39;</code></p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/s3/seed-project/get-an-url</code> </p>
 <h3 id='sample-response-body-6'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/config.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623152155525.zip"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623154221156.zip"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"djsp-connonprodshdsvc-jeeves/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623194056265.zip"</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/config.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/GetASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/expected-status.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/headers.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/PostToASingleUrl/data/url.json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623152155525.zip"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623154221156.zip"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"djsp-connonprodshdsvc-watson/nonprod/testcases/u3RQNXoBiYo7k6xdyFy6/reports/getasingleurl-20210623194056265.zip"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
@@ -508,7 +508,7 @@
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header'</span>
 </code></pre></div>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses-7'>Responses</h3>
@@ -528,9 +528,9 @@
 <h3 id='sample-request-7'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-7'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header&#39;</code></p>
 <h4 id='http-request-7'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_header</code> </p>
 <h3 id='sample-response-body-7'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-7'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -551,7 +551,7 @@
 <h2 id='get-dev-stop'>GET /DEV/STOP</h2>
 <p class="get-endpoint">GET</p> 
 <h3 id='summary-8'>Summary</h3>
-<p>The <strong>GET /DEV/STOP</strong> endpoint stops the Embeded Jetty Server of Jeeves.</p>
+<p>The <strong>GET /DEV/STOP</strong> endpoint stops the Embeded Jetty Server of Watson.</p>
 <h3 id='parameters-8'>Parameters</h3>
 <p>This endpoint does not allow extra parameters.</p>
 <h3 id='responses-8'>Responses</h3>
@@ -571,9 +571,9 @@
 <h3 id='sample-request-8'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:</p>
 <h4 id='curl-request-8'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: text/plain&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: text/plain&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop&#39;</code></p>
 <h4 id='http-request-8'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/stop</code> </p>
 <h3 id='sample-response-body-8'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-8'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -601,7 +601,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{ \ 
    "ok": true \ 
- }'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post'</span>
+ }'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post'</span>
 </code></pre></div>
 <p>This endpoint allows the following parameters:</p>
 
@@ -668,9 +668,9 @@
 <h4 id='curl-request-9'>cURL Request</h4>
 <p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
    &quot;ok&quot;: true \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post&#39;</code></p>
 <h4 id='http-request-9'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/dev/json_post</code> </p>
 <h3 id='sample-response-body-9'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-9'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">

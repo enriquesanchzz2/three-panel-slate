@@ -1,5 +1,5 @@
 <h1 id='test-cases'>Test Cases</h1>
-<p>The Test Cases resource enables you to interact with the Test Cases of a Project profile in Jeeves.
+<p>The Test Cases resource enables you to interact with the Test Cases of a Project profile in Watson.
 The following table describes the available endpoints of the Test Cases resource:</p>
 
 <table><thead>
@@ -98,9 +98,9 @@ The following table describes the available endpoints of the Test Cases resource
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:  </p>
 <h4 id='curl-request'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1</code></p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases?from=0&amp;size=1</code></p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"access-control-allow-headers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content-Type, Last-Update"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"access-control-allow-methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST, GET, OPTIONS, PUT, DELETE"</span><span class="p">,</span><span class="w">
@@ -231,9 +231,9 @@ The following table describes the available endpoints of the Test Cases resource
    &quot;name&quot;: &quot;get-a-url&quot;, \ 
    &quot;description&quot;: &quot;Tests an URL&quot;, \ 
    &quot;binary&quot;: &quot;GetASingleUrl&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases</code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
@@ -299,9 +299,9 @@ The following table describes the available endpoints of the Test Cases resource
 <h3 id='sample-request-3'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:  </p>
 <h4 id='curl-request-3'>cURL Request</h4>
-<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/jeeves-api/testcases&#39;</code></p>
+<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/watson-api/testcases&#39;</code></p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/jeeves-api/testcases</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/watson-api/testcases</code> </p>
 <h3 id='sample-response-body-3'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-3'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -372,9 +372,9 @@ The following table describes the available endpoints of the Test Cases resource
 <h3 id='sample-request-4'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:  </p>
 <h4 id='curl-request-4'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code></p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code></p>
 <h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"testcase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-an-url"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seed-project"</span><span class="p">,</span><span class="w">
@@ -513,9 +513,9 @@ The following table describes the available endpoints of the Test Cases resource
 <p><code>curl -X POST --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
    &quot;name&quot;: &quot;copy-of-get-an-url&quot;, \ 
    &quot;description&quot;: &quot;A copy of the get an url Test Case&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url&#39;</code></p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url</code> </p>
 <h3 id='sample-response-body-5'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
@@ -542,7 +542,7 @@ The following table describes the available endpoints of the Test Cases resource
 <blockquote>
 <p>Use this cURL to make a request to this endpoint</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/{project}/testcases/{testcase}'</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="nt">-d</span> <span class="s1">'{body}'</span> <span class="s1">'http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/{project}/testcases/{testcase}'</span>
 </code></pre></div>
 <p>This endpoint allows the following parameters:</p>
 
@@ -631,9 +631,9 @@ The following table describes the available endpoints of the Test Cases resource
 <p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
    &quot;name&quot;: &quot;get-an-url-2&quot;, \ 
    &quot;description&quot;: &quot;A copy of the Get an URL Test Case&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url&#39;</code></p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/copy-of-get-an-url</code> </p>
 <h3 id='sample-response-body-6'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-6'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -706,9 +706,9 @@ The <strong>DELETE /PROJECTS/{PROJECT}/TESTCASES/{TESTCASE}</strong> endpoint de
 <h3 id='sample-request-7'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint:  </p>
 <h4 id='curl-request-7'>cURL Request</h4>
-<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2&#39;</code></p>
+<p><code>curl -X DELETE --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2&#39;</code></p>
 <h4 id='http-request-7'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/projects/seed-project/testcases/get-an-url-2</code> </p>
 <h3 id='sample-response-body-7'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-7'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
