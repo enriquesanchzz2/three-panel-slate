@@ -1,5 +1,5 @@
-<h1 id='contributing-to-jeeves'>Contributing to Jeeves</h1>
-<p>Thanks for your interest to contribute to the development of the Jeeves API.</p>
+<h1 id='contributing-to-watson'>Contributing to Watson</h1>
+<p>Thanks for your interest to contribute to the development of the Watson API.</p>
 
 <p>For information on:</p>
 
@@ -9,11 +9,11 @@
 <li>Testing your changes in the WebApp</li>
 </ul>
 
-<p>Check the technical documentation available in the Jeeves API and WebApp repositories:</p>
+<p>Check the technical documentation available in the Watson API and WebApp repositories:</p>
 
 <ul>
-<li><a href="https://github.dowjones.net/SharedServices/Jeeves.API">Jeeves API Repository</a></li>
-<li><a href="https://github.dowjones.net/SharedServices/Jeeves.WebApp">Jeeves WebApp Repository</a></li>
+<li><a href="https://github.dowjones.net/SharedServices/Watson.API">Watson API Repository</a></li>
+<li><a href="https://github.dowjones.net/SharedServices/Watson.WebApp">Watson WebApp Repository</a></li>
 </ul>
 
-<p>For further information about Jeeves, questions, or report of bugs and errors, contact us at <a href="mailto:jeeves@dowjones.com">jeeves@dowjones.com</a> .</p>
+<p>For further information about Watson, questions, or report of bugs and errors, contact us at <a href="mailto:watson@dowjones.com">watson@dowjones.com</a> .</p>

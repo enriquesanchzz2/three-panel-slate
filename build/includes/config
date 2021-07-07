@@ -87,9 +87,9 @@ The following table describes the available endpoints of the Config resource:</p
 <h3 id='sample-request'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/preview&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/preview&#39;</code></p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/preview</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/preview</code> </p>
 <h3 id='sample-response-body'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetASingleUrl"</span><span class="p">,</span><span class="w">
@@ -202,9 +202,9 @@ The following table describes the available endpoints of the Config resource:</p
 <h3 id='sample-request-2'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-2'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/preview&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/preview&#39;</code></p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/preview
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/preview
 </code> </p>
 <h3 id='sample-response-body-2'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"binary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetASingleUrl"</span><span class="p">,</span><span class="w">
@@ -293,9 +293,9 @@ The following table describes the available endpoints of the Config resource:</p
 <h3 id='sample-request-3'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-3'>cURL Request</h4>
-<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/validation&#39;</code></p>
+<p><code>curl -X GET --header &#39;Accept: application/json&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/validation&#39;</code></p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/validation</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/config/validation</code> </p>
 <h3 id='sample-response-body-3'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"isArray"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -428,10 +428,10 @@ The following table describes the available endpoints of the Config resource:</p
 <h3 id='sample-request-4'>Sample Request</h3>
 <p>These are examples of an API request to this endpoint: </p>
 <h4 id='curl-request-4'>cURL Request</h4>
-<p><code>curl -X POST --header &#39;Content-Type: multipart/form-data&#39; --header &#39;Accept: application/json&#39; {&quot;type&quot;:&quot;formData&quot;} &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url&#39;
+<p><code>curl -X POST --header &#39;Content-Type: multipart/form-data&#39; --header &#39;Accept: application/json&#39; {&quot;type&quot;:&quot;formData&quot;} &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url&#39;
 &#39;</code></p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url</code> </p>
 <h3 id='sample-response-body-4'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
@@ -540,9 +540,9 @@ The following table describes the available endpoints of the Config resource:</p
 <h4 id='curl-request-5'>cURL Request</h4>
 <p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
    &quot;binary&quot;: &quot;PostToASingleUrl&quot; \ 
- }&#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms&#39;</code></p>
+ }&#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms&#39;</code></p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms</code> </p>
 <h3 id='sample-response-body-5'>Sample Response Body</h3>
 <p>This endpoint does not have a Response Body.</p>
 <h3 id='sample-response-headers-5'>Sample Response Headers</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -638,9 +638,9 @@ The following table describes the available endpoints of the Config resource:</p
 <p><code>curl -X PUT --header &#39;Content-Type: application/json&#39; --header &#39;Accept: application/json&#39; -d &#39;{ \ 
   &quot;url&quot;: &quot;http://www.wsj.com/&quot; \ 
  } \ 
- &#39; &#39;http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url&#39;</code></p>
+ &#39; &#39;http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url&#39;</code></p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>http://jeeves-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url</code> </p>
+<p><code>http://watson-api-nonprod.us-east-1.elasticbeanstalk.com/api/config/projects/seed-project/testcases/get-an-url/forms/url</code> </p>
 <h3 id='sample-response-body-6'>Sample Response Body</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
 <p>The sample JSON file at the right of the page presents the Response Body obtained with the Sample Request.</p>
